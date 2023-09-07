@@ -30,6 +30,7 @@ var matchFilters = MatchFilters{
 	models.NfType_NSSF: MatchNssfProfile,
 	models.NfType_UDM:  MatchUdmProfile,
 	models.NfType_AMF:  MatchAmfProfile,
+	models.NfType_UDR:  MatchUdrProfile,
 }
 
 func MatchSmfProfile(profile *models.NfProfile, opts *Nnrf_NFDiscovery.SearchNFInstancesParamOpts) (bool, error) {
@@ -256,4 +257,9 @@ func MatchUdmProfile(profile *models.NfProfile, opts *Nnrf_NFDiscovery.SearchNFI
 	}
 	logger.UtilLog.Tracef("UDM match found = %v", matchFound)
 	return matchFound, nil
+}
+
+func MatchUdrProfile(profile *models.NfProfile, opts *Nnrf_NFDiscovery.SearchNFInstancesParamOpts) (bool, error) {
+	logger.UtilLog.Traceln("UDR match found ")
+	return true, nil
 }

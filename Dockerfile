@@ -8,6 +8,7 @@ FROM golang:1.16.0-stretch AS builder
 LABEL maintainer="ONF <omec-dev@opennetworking.org>"
 
 #RUN apt remove cmdtest yarn
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg > pubkey.gpg
 RUN apt-key add pubkey.gpg
@@ -32,7 +33,7 @@ LABEL description="ONF open source 5G Core Network" \
 ARG DEBUG_TOOLS
 
 # Install debug tools ~ 100MB (if DEBUG_TOOLS is set to true)
-RUN apk update && apk add -U vim strace net-tools curl netcat-openbsd bind-tools bash
+RUN apk update && apk add -U vim strace net-tools curl netcat-openbsd bind-tools 
 
 # Set working dir
 WORKDIR /free5gc
