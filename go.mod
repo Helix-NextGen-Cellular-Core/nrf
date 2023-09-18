@@ -4,6 +4,8 @@ go 1.16
 
 replace github.com/omec-project/nrf => ./
 
+replace github.com/omec-project/MongoDBLibrary => ../mongodblibrary
+
 require (
 	github.com/antihax/optional v1.0.0
 	github.com/antonfisher/nested-logrus-formatter v1.3.1
