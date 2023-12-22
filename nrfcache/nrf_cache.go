@@ -8,11 +8,12 @@ package nrf_cache
 import (
 	"container/heap"
 	"encoding/json"
+	"sync"
+	"time"
+
 	"github.com/omec-project/nrf/logger"
 	"github.com/omec-project/openapi/Nnrf_NFDiscovery"
 	"github.com/omec-project/openapi/models"
-	"sync"
-	"time"
 )
 
 const defaultCacheTTl = time.Hour
@@ -405,9 +406,9 @@ func SearchNFInstances(nrfUri string, targetNfType, requestNfType models.NfType,
 		logger.UtilLog.Infoln("Failed to find cache for nftype")
 	}
 
-	for _, np := range searchResult.NfInstances {
-		logger.UtilLog.Tracef("%v", np)
-	}
+	// for _, np := range searchResult.NfInstances {
+	// 	logger.UtilLog.Tracef("%v", np)
+	// }
 
 	return searchResult, err
 
