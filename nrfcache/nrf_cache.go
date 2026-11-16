@@ -406,10 +406,6 @@ func SearchNFInstances(nrfUri string, targetNfType, requestNfType models.NfType,
 		logger.UtilLog.Infoln("Failed to find cache for nftype")
 	}
 
-	// for _, np := range searchResult.NfInstances {
-	// 	logger.UtilLog.Tracef("%v", np)
-	// }
-
 	return searchResult, err
 
 }
