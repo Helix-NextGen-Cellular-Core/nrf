@@ -4,7 +4,7 @@ go 1.16
 
 replace github.com/omec-project/nrf => ./
 
-replace github.com/omec-project/MongoDBLibrary => ../mongodblibrary
+replace github.com/omec-project/MongoDBLibrary => github.com/Helix-NextGen-Cellular-Core/mongodblibrary v1.0.0
 
 require (
 	github.com/antihax/optional v1.0.0
